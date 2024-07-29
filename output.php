@@ -59,7 +59,9 @@
         });
 
         $grades = [];
+        $totalScore = 0;
         foreach ($students as $student) {
+            $totalScore += $student['score'];
             if ($student['score'] >= 8) {
                 $grades[] = 'Xuất sắc';
             } elseif ($student['score'] >= 6.5) {
@@ -70,6 +72,7 @@
                 $grades[] = 'Yếu';
             }
         }
+        $averageScore = $totalScore / count($students);
 
         echo '<table>';
         echo '<tr><th>Tên</th><th>Điểm</th><th>Xếp loại</th></tr>';
@@ -81,7 +84,7 @@
             echo '</tr>';
         }
         echo '</table>';
-
+        echo '<h3>Điểm trung bình của cả lớp: ' . round($averageScore, 2) . '</h3>';
     }
     ?>
 </body>

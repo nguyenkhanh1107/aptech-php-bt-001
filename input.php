@@ -19,8 +19,7 @@
             <td><input required type="number" id="score<?= $i ?>" min=0 max=10 name="scores[]"></td>
          </tr>
          <?php endfor ?>
-
-    
+           
          <!-- <tr>
             <td><label for="name">Tên học sinh:</label></td>
             <td><input required type="text" id="name" name="names[]"></td>
